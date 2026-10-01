@@ -6,7 +6,7 @@ using namespace std;
 //1. hafiz part(1)
 
 //2. mawan part(1)
-
+double calculateEarnings(double basicSalary, double overtimeHours, double overtimeRate, double allowances);
 //3. cindy part(1)
 double calculateDeductions(double basicSalary, double grossSalary);
 //4. ilyaa part(1)
@@ -25,9 +25,8 @@ int main() {
 
         // masuk funtion hafiz masuk funtion input user(2)
         getUserInput(basic, otHours, otRate, allow);
-
         // masuk funtion mawan kira pendapatan user(2)
-
+        double grossSalary = calculateEarnings(basic, otHours, otRate, allow);
         // masuk funtion cindy kira deduction user(2)
         double totalDeductions = calculateDeductions(basic,grossSalary);
 
@@ -74,9 +73,11 @@ int main() {
 
 
 // mawan punya funtion(3)
-
-
-
+double calculateEarnings(double basicSalary, double overtimeHours, double overtimeRate, double allowances){
+   double overtimePay = overtimeHours * overtimeRate;
+   double grossSalary = basicSalary + overtimePay + allowances;
+   return grossSalary;
+}
 // cindy punya funtion(3)
 double calculateDeductions(double basicSalary, double grossSalary){
   double epf = basicSalary * 0.11;
