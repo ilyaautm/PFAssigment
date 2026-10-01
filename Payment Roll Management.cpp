@@ -8,7 +8,7 @@ using namespace std;
 //2. mawan part(1)
 
 //3. cindy part(1)
-
+double calculateDeductions(double basicSalary, double grossSalary);
 //4. ilyaa part(1)
 void displayOutput(double grossSalary, double totalDeductions, double netSalary);
 
@@ -29,6 +29,7 @@ int main() {
         // masuk funtion mawan kira pendapatan user(2)
 
         // masuk funtion cindy kira deduction user(2)
+        double totalDeductions = calculateDeductions(basic,grossSalary);
 
         // Semakan jika jumlah potongan melebihi gaji kasar
         if (totalDeductions > grossSalary) {
@@ -77,7 +78,13 @@ int main() {
 
 
 // cindy punya funtion(3)
-
+double calculateDeductions(double basicSalary, double grossSalary){
+  double epf = basicSalary * 0.11;
+  double sosco = 25.00;
+  double incomeTax = grossSalary * 0.05;
+  double totalDeductions = epf + sosco + incomeTax;
+  return totalDeductions;
+}
 
 //ilyaa punya funtion(3)
 void displayOutput(double grossSalary, double totalDeductions, double netSalary) {
