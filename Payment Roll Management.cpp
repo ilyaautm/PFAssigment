@@ -4,7 +4,7 @@ using namespace std;
 
 // PROTOTYPE FUNGSI 
 //1. hafiz part(1)
-
+void getUserInput(double &basicSalary, double &overtimeHours, double &overtimeRate, double &allowances);
 //2. mawan part(1)
 double calculateEarnings(double basicSalary, double overtimeHours, double overtimeRate, double allowances);
 //3. cindy part(1)
@@ -69,13 +69,38 @@ int main() {
 
 
 // hafiz punya funtion(3)
+void getUserInput(double &basicSalary, double &overtimeHours, double &overtimeRate, double &allowances) {
+    cout << "Enter Basic Salary: ";
+    cin >> basicSalary;
+    cout << "Enter Overtime Hours: ";
+    cin >> overtimeHours;
+    cout << "Enter Overtime Rate: ";
+    cin >> overtimeRate;
+    cout << "Enter Allowances: ";
+    cin >> allowances;
 
+    // Ulang minta input jika user memasukkan nilai negatif(tak perlu copy tapi kena tahu kenapa buat coding selection ni bila present)
+    while (basicSalary < 0 || overtimeHours < 0 || overtimeRate < 0 || allowances < 0) {
+        cout << "----------------------------------" << endl;
+        cout << "Error: \nInput values cannot be negative." << endl;
+        cout << "----------------------------------" << endl;
+        cout << "Please re-enter valid inputs:\n";
 
-
+        cout << "Enter Basic Salary: ";
+        cin >> basicSalary;
+        cout << "Enter Overtime Hours: ";
+        cin >> overtimeHours;
+        cout << "Enter Overtime Rate: ";
+        cin >> overtimeRate;
+        cout << "Enter Allowances: ";
+        cin >> allowances;
+    }
+}
 // mawan punya funtion(3)
 double calculateEarnings(double basicSalary, double overtimeHours, double overtimeRate, double allowances){
    double overtimePay = overtimeHours * overtimeRate;
    double grossSalary = basicSalary + overtimePay + allowances;
+        
    return grossSalary;
 }
 // cindy punya funtion(3)
