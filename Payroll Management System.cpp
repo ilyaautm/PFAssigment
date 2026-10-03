@@ -44,14 +44,14 @@ int main() {
             displayOutput(grossSalary, totalDeductions, netSalary);
         }
 
-        // Semakan pengulangan program (Re-calculate validation)
+        // semakan pengulangan program (re-calculate validation)
         do {
             cout << "Do you want to calculate again? (Y/N): ";
             cin >> choice;
 
             if (choice != 'y' && choice != 'Y' && choice != 'n' && choice != 'N') {
                 cout << "---------------------------------------" << endl;
-                cout << "Invalid input! Please enter 'Y' or 'N' only." << endl;
+                cout << "Invalid input! Please enter 'Y/y' or 'N/n' only." << endl;
                 cout << "---------------------------------------" << endl;
             }
         } while (choice != 'y' && choice != 'Y' && choice != 'n' && choice != 'N');
@@ -79,7 +79,7 @@ void getUserInput(double &basicSalary, double &overtimeHours, double &overtimeRa
     cout << "Enter Allowances: ";
     cin >> allowances;
 
-    // Ulang minta input jika user memasukkan nilai negatif(tak perlu copy tapi kena tahu kenapa buat coding selection ni bila present)
+    // ulang minta input jika user memasukkan nilai negatif
     while (basicSalary < 0 || overtimeHours < 0 || overtimeRate < 0 || allowances < 0) {
         cout << "----------------------------------" << endl;
         cout << "Error: \nInput values cannot be negative." << endl;
