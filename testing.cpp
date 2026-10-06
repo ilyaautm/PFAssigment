@@ -28,7 +28,7 @@ int main() {
     do {
         cout << "---------------------------------------" << endl;
         cout << "       Payroll Management System       " << endl;
-        cout << "---------------------------------------" << endl;
+        cout << "----------------------------------------" << endl;
 
         // 1. INPUT: Dapatkan input daripada user
         getUserInput(basic, otHours, otRate, allow);
